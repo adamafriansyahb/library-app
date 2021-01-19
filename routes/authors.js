@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
             authors: authors,
             searchOptions: req.query
         });
-        console.log(req.query);
+        // console.log(req.query);
     }
     catch {
         console.log('something went wrong');
