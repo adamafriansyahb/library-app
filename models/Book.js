@@ -34,6 +34,8 @@ const bookSchema = new mongoose.Schema({
     }
 });
 
+
+// create a virtual so that it can be used on ejs page as img source
 bookSchema.virtual('coverImagePath').get(function() {
     if (this.coverImageName != null) {
         return path.join('/', coverImageBasePath, this.coverImageName);

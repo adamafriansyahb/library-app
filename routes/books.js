@@ -22,14 +22,17 @@ const upload = multer({
 router.get('/', async (req, res) => {
     let query = Book.find();
 
+    // get based on title
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'));
     }
 
+    // get based on before the given date
     if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
         query = query.lte('publishDate', req.query.publishedBefore);
     }
 
+    // get based on after the given date
     if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
         query = query.gte('publishDate', req.query.publishedAfter);
     }
