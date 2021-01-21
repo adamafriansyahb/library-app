@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 // import all routes
 const indexRouter = require('./routes/index');
@@ -29,6 +30,7 @@ app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 // to get data from post request
 app.use(bodyParser.urlencoded({extended: false, limit: '10mb'}));
