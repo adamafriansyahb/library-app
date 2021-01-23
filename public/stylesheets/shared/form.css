@@ -36,11 +36,6 @@
   margin-left: 0.25rem;
 }
 
-.form-item textarea {
-  height: 100%;
-  resize: none;
-}
-
 .form-item select option {
   background-color: black;
 }
@@ -64,6 +59,11 @@
 .form-item select:focus,
 .form-item textarea:focus {
   border-color: var(--form-input-border-color-light);
+}
+
+.form-item textarea {
+  height: 100%;
+  resize: none;
 }
 
 .filepond--root {
